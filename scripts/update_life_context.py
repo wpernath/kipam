@@ -27,8 +27,8 @@ def load_current_context(base_dir):
     """Load the current context file, separating YAML frontmatter from content."""
     context_path = os.path.join(
         base_dir, 
-        "Life Context Prompts", 
-        "Personal AI Coach with Life Context.md"
+        "prompts", 
+        "PP.Bot KiPAM Prompt.md"
     )
     
     if not os.path.exists(context_path):
@@ -107,7 +107,7 @@ def save_updated_context(context_path, current_frontmatter, current_context, upd
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     archive_path = os.path.join(
         archive_dir,
-        f"Personal AI Coach with Life Context_{timestamp}.md"
+        f"KiPAM_Context_{timestamp}.md"
     )
     
     # Format the frontmatter as YAML
@@ -130,7 +130,7 @@ def main():
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
     base_dir = os.path.dirname(script_dir)  # Go up one directory
-    conversations_dir = os.path.join(base_dir, "Conversations")
+    conversations_dir = os.path.join(base_dir, "conversations")
     
     client = anthropic.Anthropic()
     

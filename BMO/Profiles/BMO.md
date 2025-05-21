@@ -1,5 +1,5 @@
 ---
-model: granite3.3:8b
+model: ""
 max_tokens: .nan
 temperature: 1
 enable_reference_current_note: false
