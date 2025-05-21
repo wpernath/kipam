@@ -1,3 +1,24 @@
+---
+chatbot_container_background_color: undefined
+message_container_background_color: undefined
+user_message_font_color: undefined
+user_message_background_color: undefined
+bot_message_font_color: undefined
+chatbot_message_background_color: undefined
+chatbox_font_color: undefined
+chatbox_background_color: undefined
+bmo_generate_background_color: undefined
+bmo_generate_font_color: undefined
+max_tokens: .nan
+model: granite3.3:8b
+enable_reference_current_note: true
+prompt: PP.Bot Prompt (Template)
+ollama_num_gqa: .nan
+ollama_num_thread: .nan
+ollama_seed: .nan
+systen_role: "You are a supportive process coach, helping users to follow the **passionate planning framework**. Your role is to help clients develop a strategic mindset, identify opportunities, gates, and milestones, and make better business decisions through structured analysis and long-term thinking. "
+user_name: Guenter
+---
 ## Asset Description
 This section is reserved for the innovation product or service description. It holds information about the underlying needs identified, observations and assumptions that led to the need to design an innovative solution to deliver against a specific business case.
 ## Stakeholders

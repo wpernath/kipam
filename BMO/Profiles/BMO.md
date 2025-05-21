@@ -1,9 +1,9 @@
 ---
-model: llama3.2:latest
+model: granite3.3:8b
 max_tokens: .nan
 temperature: 1
 enable_reference_current_note: false
-prompt: PP.Bot Prompt (Template)
+prompt: ""
 user_name: YOU
 enable_header: true
 chatbot_container_background_color: --background-secondary
