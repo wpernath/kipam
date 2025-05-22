@@ -27,8 +27,8 @@ def load_current_context(base_dir):
     """Load the current context file, separating YAML frontmatter from content."""
     context_path = os.path.join(
         base_dir, 
-        "prompts", 
-        "PP.Bot KiPAM Prompt.md"
+        "profiles", 
+        "Project KiPAM Context.md"
     )
     
     if not os.path.exists(context_path):
@@ -63,7 +63,7 @@ def load_conversations(conversations_dir, num_conversations):
 def update_context_with_llm(current_context, recent_conversations, client):
     """Use LLM to analyze conversations and update the context."""
     
-    system_prompt = """You are an expert at analyzing coaching conversations and extracting relevant context about the client.
+    system_prompt = """You are an expert at analyzing conversations and extracting relevant context about the text.
     Please analyze the provided conversations and current context, then generate an updated version that:
     1. Maintains exactly the same structure and headings as the current context
     2. Updates the content under each heading based on new information from the conversations
@@ -93,12 +93,15 @@ def update_context_with_llm(current_context, recent_conversations, client):
         system=system_prompt,
         messages=[{"role": "user", "content": message}]
     )
-    
+    #print(message)
+    #print("response:")
+    #print(response.content[0].text)
     return response.content[0].text
 
 
 def save_updated_context(context_path, current_frontmatter, current_context, updated_context):
     """Archive current context and save the updated version, preserving frontmatter."""
+
     # Create archive directory if it doesn't exist
     archive_dir = os.path.join(os.path.dirname(context_path), "history")
     os.makedirs(archive_dir, exist_ok=True)
@@ -134,6 +137,9 @@ def main():
     
     client = anthropic.Anthropic()
     
+    print("script_dir: " + script_dir)
+    print("base_dir  : " + base_dir)
+    print("conv_dir  : " + conversations_dir)
     try:
         # Load recent conversations
         recent_conversations = load_conversations(conversations_dir, args.num_conversations)
