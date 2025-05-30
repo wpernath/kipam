@@ -1,2 +1,4 @@
 # kipam
-This is just some fun experiments with AI and Obsidian
+This is the collection of trails & errors we found along our experiments:
+
+llama3.2 quality is insufficient
