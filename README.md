@@ -38,5 +38,13 @@ The chat bot should always remind you of the state of the project.
 ## Trials & Errors
 This is the collection of trails & errors we found along our experiments:
 
-Editor System Role in BMO settings need to be empty.
-llama3.2 quality is insufficient
+- Editor System Role in BMO settings need to be empty.
+- llama3.2 quality is insufficient
+
+## Summary
+Unfortunately, using this combination with a local AI running via `ollama` or such things isn't suitable for what we wanted to achieve. This kind of chat bot requires a huge amount of memory so that you're able to have a large context of what you've discussed so far. This doesn't work as expected. 
+
+- Reaction of the chat bot is not reproducable
+- Reaction of the local AI is not (always) reproducable 
+
+This experiment is now closed.
